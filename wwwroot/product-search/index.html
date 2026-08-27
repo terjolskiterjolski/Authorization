@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <a class="back-link" href="/login.html" aria-label="Back to sign in">
+            <span aria-hidden="true">←</span> Back
+        </a>
+        <header>
+            <p class="eyebrow">PRODUCT CATALOG</p>
+            <h1>Find what you need.</h1>
+            <p class="subtitle">Start typing a product name to search the inventory.</p>
+        </header>
+
+        <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Search products..." autocomplete="off" autofocus>
+        </label>
+
+        <p id="status" class="status" role="status">Loading products...</p>
+        <section id="products" class="product-grid" aria-live="polite"></section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

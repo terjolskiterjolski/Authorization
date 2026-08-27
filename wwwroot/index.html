@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create account | Nexora</title><link rel="stylesheet" href="styles.css?v=2"></head>
+<body class="auth-page">
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">N</span><span>Nexora</span></a><div class="trust-badge"><span>♢</span> Secure &amp; trusted platform</div></header>
+<div class="wave wave-one"></div><div class="wave wave-two"></div>
+<main class="auth-shell"><section class="auth-card register-card">
+<nav class="auth-tabs"><a href="login.html">Sign In</a><a class="active" href="index.html">Register</a></nav>
+<div class="auth-content"><div class="form-heading"><h1>Create your account</h1><p>Register to get started and access your workspace</p></div>
+<form id="registerForm">
+<label>Full name<span class="field"><span class="icon">♧</span><input id="name" type="text" placeholder="Your full name" autocomplete="name" required></span></label>
+<label>Email<span class="field"><span class="icon">✉</span><input id="email" type="email" placeholder="you@example.com" autocomplete="email" required></span></label>
+<div class="field-row"><label>Phone<span class="field"><span class="icon">☎</span><input id="phone" type="tel" placeholder="Phone number"></span></label><label>Customer ID<span class="field"><span class="icon">#</span><input id="customerId" type="number" placeholder="Your ID"></span></label></div>
+<label>Address<span class="field"><span class="icon">⌂</span><input id="address" type="text" placeholder="Your address"></span></label>
+<label>Password<span class="field"><span class="icon">▣</span><input id="password" type="password" placeholder="Create a password" required><button class="eye-toggle" type="button" data-target="password" aria-label="Show password">◉</button></span></label>
+<label>Confirm password<span class="field"><span class="icon">▣</span><input id="confirmPassword" type="password" placeholder="Confirm your password" required><button class="eye-toggle" type="button" data-target="confirmPassword" aria-label="Show password">◉</button></span></label>
+<label class="check-line"><input type="checkbox" required><span>I agree to the <a href="#">Terms &amp; Privacy Policy</a></span></label>
+<p id="registerMessage" class="form-message" aria-live="polite"></p><button class="primary-button" type="submit">Create account</button>
+</form><p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p></div>
+</section></main><script src="app.js?v=2"></script></body></html>
