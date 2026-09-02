@@ -7,6 +7,8 @@
     <UserSecretsId>558dae11-7d54-4828-9c2f-7e4876b2ccc2</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.17.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="10.0.0" />
     <PackageReference Include="Npgsql" Version="10.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
   </ItemGroup>

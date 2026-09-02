@@ -1,6 +1,14 @@
 const registerForm = document.getElementById("registerForm");
 const loginForm = document.getElementById("loginForm");
 
+if (new URLSearchParams(window.location.search).get("google") === "not-configured") {
+    showMessage(
+        "loginMessage",
+        "Google Sign-In needs a Client ID and Client Secret. See the setup instructions.",
+        false
+    );
+}
+
 registerForm?.addEventListener("submit", async function (event) {
     event.preventDefault(); // Do not reload the page.
 

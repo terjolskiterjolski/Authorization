@@ -24,6 +24,9 @@ namespace SearchSystem.Services
 
             command.CommandText = LoadSql("InsertProducts.sql");
             command.ExecuteNonQuery();
+
+            command.CommandText = LoadSql("CreateCustomerFavoritesTable.sql");
+            command.ExecuteNonQuery();
         }
         private static string LoadSql(string fileName)
         {

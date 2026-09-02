@@ -1,4 +1,5 @@
 const input = document.querySelector("#searchInput");
+const searchResultsElement = document.querySelector("#searchResults");
 const productsElement = document.querySelector("#products");
 const statusElement = document.querySelector("#status");
 let requestNumber = 0;
@@ -26,11 +27,22 @@ function renderProducts(products) {
 }
 
 async function search() {
+    const prefix = input.value.trim();
+
+    if (!prefix) {
+        ++requestNumber;
+        searchResultsElement.hidden = true;
+        productsElement.innerHTML = "";
+        statusElement.textContent = "";
+        return;
+    }
+
     const currentRequest = ++requestNumber;
+    searchResultsElement.hidden = false;
     statusElement.textContent = "Searching...";
 
     try {
-        const response = await fetch(`/api/products/search?prefix=${encodeURIComponent(input.value.trim())}`);
+        const response = await fetch(`/api/products/search?prefix=${encodeURIComponent(prefix)}`);
         if (!response.ok) throw new Error("Search request failed");
 
         const products = await response.json();
@@ -51,5 +63,3 @@ input.addEventListener("input", () => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(search, 250);
 });
-
-search();

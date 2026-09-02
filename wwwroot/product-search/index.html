@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Product Search</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
     <main class="page-shell">
@@ -17,15 +17,19 @@
             <p class="subtitle">Start typing a product name to search the inventory.</p>
         </header>
 
-        <label class="search-box">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <input id="searchInput" type="search" placeholder="Search products..." autocomplete="off" autofocus>
-        </label>
+        <div class="search-area">
+            <label class="search-box">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input id="searchInput" type="search" placeholder="Search products..." autocomplete="off" autofocus>
+            </label>
 
-        <p id="status" class="status" role="status">Loading products...</p>
-        <section id="products" class="product-grid" aria-live="polite"></section>
+            <div id="searchResults" class="search-results" hidden>
+                <p id="status" class="status" role="status"></p>
+                <section id="products" class="product-list" aria-live="polite"></section>
+            </div>
+        </div>
     </main>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
