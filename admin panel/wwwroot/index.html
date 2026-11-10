@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add product · Admin panel</title>
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+<link rel="stylesheet" href="feedback.css?v=dashboard-2">
+<script src="feedback.js?v=customer-ids" defer></script>
+<link rel="stylesheet" href="dashboard-navigation.css?v=1">
+</head>
+<body>
+<header><a href="/" class="brand"><span class="mark">P</span> Product admin</a><nav aria-label="Main navigation"><a href="/" aria-current="page">Add product</a><a href="/products.html">Products</a><button type="button" id="feedback-navigation-button" onclick="window.location.href='/feedback.html'" style="display:inline-block;background:#176650;color:white;border:1px solid #176650;border-radius:8px;padding:10px 16px;font:inherit;font-size:14px;font-weight:600;cursor:pointer">Feedback dashboard</button><a class="dashboard-link" href="/api/purchased-products/history">Bought products</a></nav></header>
+<main>
+<div class="intro"><span class="eyebrow">PRODUCTS / NEW PRODUCT</span><h1>Add a product</h1><p>Enter the product details below to add it to your inventory.</p></div>
+<section class="dashboard-entry" aria-labelledby="dashboard-entry-title">
+  <div><h2 id="dashboard-entry-title">Ratings &amp; customer feedback</h2><p>View product ratings and read customer comments.</p></div>
+  <a class="dashboard-link" href="/feedback.html">Open feedback dashboard <span aria-hidden="true">&rarr;</span></a>
+</section>
+<div class="layout">
+<section class="card" aria-labelledby="details-title">
+<div class="card-heading"><h2 id="details-title">Product details</h2><p>Fields marked with * are required.</p></div>
+<form id="product-form">
+<div style="margin-bottom:25px"><label for="sex">Sex *</label><select id="sex" name="sex" required><option value="Men">Men</option><option value="Women">Women</option><option value="Unisex">Unisex</option></select></div>
+<label for="productName">Product name *</label><input id="productName" name="productName" maxlength="100" placeholder="e.g. Wireless keyboard" required>
+<div class="grid">
+<div><label for="productId">Product ID *</label><input id="productId" name="productId" type="number" min="1" max="2147483647" step="1" placeholder="e.g. 101" required><small>Use a unique ID for each product.</small></div>
+<div><label for="description">Description *</label><input id="description" name="description" placeholder="Briefly describe the product" required></div>
+<div><label for="price">Price *</label><input id="price" name="price" type="number" min="0" max="99999999.99" step="0.01" placeholder="0.00" required></div>
+<div><label for="stockQuantity">Stock quantity *</label><input id="stockQuantity" name="stockQuantity" type="number" min="0" max="2147483647" step="1" placeholder="0" required></div>
+</div>
+<div id="status" role="status" aria-live="polite" hidden></div>
+<div class="actions"><button type="button" id="open-feedback-dashboard" onclick="window.location.assign('/feedback.html')">Feedback dashboard</button><button type="reset" class="secondary">Clear form</button><button type="submit" id="save-button">Add product ↗</button></div>
+</form>
+</section>
+<aside class="card note"><span class="note-icon" aria-hidden="true">+</span><h2>Ready for your inventory</h2><p>Your product will be saved as soon as you select Add product.</p><hr><h3>Before you save</h3><ul><li>Give your product a clear, recognizable name.</li><li>Check the price and available stock.</li><li>Make sure the product ID is unique.</li></ul></aside>
+</div>
+
+<section id="feedback-dashboard" aria-labelledby="feedback-dashboard-title">
+    <div class="intro"><span class="eyebrow">CUSTOMERS / FEEDBACK</span><h2 id="feedback-dashboard-title" class="dashboard-title">Ratings &amp; feedback dashboard</h2><p>See how customers rate your products and read what they have to say.</p></div>
+    <div class="product-toolbar"><label for="feedback-search">Find a product or comment<input id="feedback-search" type="search" placeholder="Search by product, customer ID, or feedback"></label><button id="refresh-feedback" class="secondary" type="button">Refresh feedback</button></div>
+    <div class="feedback-layout">
+      <section class="card" aria-labelledby="ratings-heading"><div class="card-heading"><h2 id="ratings-heading">Product ratings</h2><p>Average rating by customer and product</p></div><div class="feedback-content"><p id="ratings-status" role="status" aria-live="polite">Loading ratings…</p><ul id="ratings" class="feedback-list"></ul></div></section>
+      <section class="card" aria-labelledby="comments-heading"><div class="card-heading"><h2 id="comments-heading">Customer comments</h2><p>Feedback shared about your products</p></div><div class="feedback-content"><p id="comments-status" role="status" aria-live="polite">Loading comments…</p><ul id="comments" class="feedback-list"></ul></div></section>
+    </div>
+</section>
+</main>
+</body>
+</html>

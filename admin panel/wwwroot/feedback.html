@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer feedback · Admin panel</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="feedback.css">
+  <script src="feedback.js?v=customer-ids" defer></script>
+</head>
+<body>
+  <header><a href="/" class="brand"><span class="mark">P</span> Product admin</a><nav aria-label="Main navigation"><a href="/">Add product</a><a href="/products.html">Products</a><a href="/feedback.html" aria-current="page">Ratings &amp; feedback</a><a class="dashboard-link" href="/api/purchased-products/history">Bought products</a></nav></header>
+  <main>
+    <div class="intro"><span class="eyebrow">CUSTOMERS / FEEDBACK</span><h1>Customer feedback</h1><p>See how customers rate your products and read what they have to say.</p></div>
+    <div class="product-toolbar"><label for="feedback-search">Find a product or comment<input id="feedback-search" type="search" placeholder="Search by product, customer ID, or feedback"></label><button id="refresh-feedback" class="secondary" type="button">Refresh feedback</button></div>
+    <div class="feedback-layout">
+      <section class="card" aria-labelledby="ratings-heading"><div class="card-heading"><h2 id="ratings-heading">Product ratings</h2><p>Average rating by customer and product</p></div><div class="feedback-content"><p id="ratings-status" role="status" aria-live="polite">Loading ratings…</p><ul id="ratings" class="feedback-list"></ul></div></section>
+      <section class="card" aria-labelledby="comments-heading"><div class="card-heading"><h2 id="comments-heading">Customer comments</h2><p>Feedback shared about your products</p></div><div class="feedback-content"><p id="comments-status" role="status" aria-live="polite">Loading comments…</p><ul id="comments" class="feedback-list"></ul></div></section>
+    </div>
+  </main>
+</body>
+</html>

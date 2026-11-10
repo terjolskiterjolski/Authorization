@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS purchases (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    product_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    user_name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    product_name TEXT NOT NULL,
+    unit_price NUMERIC(10, 2) NOT NULL,
+    quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity > 0),
+    purchased_at_utc TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

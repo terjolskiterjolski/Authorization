@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfume Collection</title>
+    <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+    <main class="page-shell">
+        <a class="back-link" href="/login.html" aria-label="Back to sign in">
+            <span aria-hidden="true">←</span> Back
+        </a>
+        <button id="cartButton" class="cart-button" type="button" aria-haspopup="dialog">Cart (<span id="cartCount">0</span>)</button><p id="cartStatus" class="status" role="status"></p><div class="search-area">
+            <label class="search-box">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input id="searchInput" aria-label="Search perfumes" type="search" placeholder="Search perfumes..." autocomplete="off" autofocus>
+            </label>
+
+            <div id="searchResults" class="search-results" hidden>
+                <p id="status" class="status" role="status"></p>
+                <section id="searchProducts" class="product-list" aria-live="polite"></section>
+            </div>
+        </div>
+        <header>
+            <p class="eyebrow">PERFUME COLLECTION</p>
+            <h1>Find your signature scent.</h1>
+            <p class="subtitle">Explore perfumes for women, men and everyone. Highest rated first.</p>
+        </header>
+
+        <nav id="sexFilters" class="sex-filters" aria-label="Perfume categories">
+            <button type="button" data-sex="All" aria-pressed="true">All perfumes</button>
+            <button type="button" data-sex="Women" aria-pressed="false">Women</button>
+            <button type="button" data-sex="Men" aria-pressed="false">Men</button>
+            <button type="button" data-sex="Unisex" aria-pressed="false">Unisex</button>
+        </nav>
+        <section class="catalog" aria-label="Perfumes by rating">
+            <h2 id="categoryTitle">All perfumes</h2>
+            <p id="catalogStatus" class="status" role="status">Loading perfumes...</p>
+            <div id="products" class="product-list catalog-grid"></div>
+        </section>
+    </main>
+
+    <dialog id="cartDialog" aria-labelledby="cartTitle">
+        <div class="cart-heading"><h2 id="cartTitle">Your cart</h2><form method="dialog"><button class="cart-button" type="submit" autofocus>Close</button></form></div>
+        <div id="cartItems"></div>
+        <p class="cart-total">Total: <span id="cartTotal">$0.00</span></p>
+    </dialog>
+    <script src="product-photo.js?v=3"></script>
+    <script src="app.js?v=12"></script>
+    <script src="purchase.js?v=1"></script>
+</body>
+</html>

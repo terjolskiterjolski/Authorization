@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products · Admin panel</title>
+  <link rel="stylesheet" href="styles.css?v=photo-refresh-2"><script src="products.js?v=photo-refresh-2" defer></script>
+<link rel="stylesheet" href="dashboard-navigation.css?v=1">
+</head>
+<body>
+  <header><a href="/" class="brand"><span class="mark">P</span> Product admin</a><nav aria-label="Main navigation"><a href="/">Add product</a><a href="/products.html" aria-current="page">Products</a><button type="button" id="feedback-navigation-button" onclick="window.location.href='/feedback.html'" style="display:inline-block;background:#176650;color:white;border:1px solid #176650;border-radius:8px;padding:10px 16px;font:inherit;font-size:14px;font-weight:600;cursor:pointer">Feedback dashboard</button><a class="dashboard-link" href="/api/purchased-products/history">Bought products</a></nav></header>
+  <main>
+    <div class="intro"><span class="eyebrow">INVENTORY / PRODUCTS</span><h1>Your products</h1><p>Products are shown newest first. Review uploaded products and edit their details below each card.</p></div>
+    <p><a class="dashboard-link" href="/feedback.html">Open feedback dashboard &rarr;</a></p><div class="product-toolbar"><label for="search">Search products<input id="search" type="search" placeholder="Search by name or ID"></label><button id="reload" class="secondary">Reload products</button></div>
+    <p id="list-status" role="status" aria-live="polite">Loading products…</p>
+    <div id="products" class="product-list"></div>
+  </main>
+  <template id="product-template">
+    <article class="card product-card">
+      <div class="product-summary"><span class="eyebrow product-id"></span><h2 class="product-name"></h2><p class="product-description"></p><div class="product-facts"><span class="product-price"></span><span class="product-stock"></span><span class="product-sex"></span></div></div>
+      <div class="photo-controls"><img class="product-photo" alt="Selected product photo" hidden><input class="photo-input" type="file" accept="image/jpeg,image/png,image/webp" hidden><button type="button" class="upload-photo">Upload photo</button><p class="photo-status" role="status" aria-live="polite"></p></div><form class="edit-form">
+        <h3>Edit product</h3>
+        <div class="grid"><div><label>Sex *<select name="sex" required><option value="Men">Men</option><option value="Women">Women</option><option value="Unisex">Unisex</option></select></label></div>
+          <div><label data-field="id">Product ID *<input name="id" type="number" min="1" max="2147483647" step="1" required></label></div>
+          <div><label data-field="name">Product name *<input name="name" maxlength="100" required></label></div>
+          <div><label data-field="price">Price *<input name="price" type="number" min="0" max="99999999.99" step="0.01" required></label></div>
+          <div><label data-field="stockQuantity">Stock quantity *<input name="stockQuantity" type="number" min="0" max="2147483647" step="1" required></label></div>
+        </div>
+        <label class="description-label">Description *<textarea name="description" rows="3" required></textarea></label>
+        <div class="form-status" role="status" aria-live="polite" hidden></div>
+        <div class="actions"><button type="reset" class="secondary">Reset changes</button><button type="submit">Save changes</button></div>
+      </form>
+    </article>
+  </template>
+</body>
+</html>

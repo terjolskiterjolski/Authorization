@@ -1,0 +1,9 @@
+bin/
+obj/
+build-check/
+build-check-db/
+.verify-build/
+.codex-build/
+authorization.db
+authorization.db-shm
+authorization.db-wal

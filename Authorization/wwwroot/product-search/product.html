@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfume details</title>
+    <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+    <main class="page-shell">
+        <a class="back-link" href="index.html"><span aria-hidden="true">&larr;</span> Back to collection</a>
+        <p id="productStatus" class="status" role="status">Loading perfume...</p>
+        <article id="productDetail" class="product-detail" hidden>
+            <p class="eyebrow">PERFUME COLLECTION</p>
+            <h1 id="productName"></h1>
+            <img id="productPhoto" class="product-photo" alt="" hidden>
+            <p id="productDescription" class="product-description"></p>
+            <dl class="product-facts">
+                <div><dt>Price</dt><dd id="productPrice" class="price"></dd></div>
+                <div><dt>Category</dt><dd id="productCategory"></dd></div>
+                <div><dt>Availability</dt><dd id="productStock"></dd></div>
+                <div><dt>Rating</dt><dd id="productRating"></dd></div>
+            </dl>
+        </article>
+        <section id="feedbackSection" class="feedback-section" hidden>
+            <form id="feedbackForm">
+                <label for="feedbackMessage">Your feedback</label>
+                <textarea id="feedbackMessage" name="feedback" required maxlength="5000" placeholder="What do you think about this perfume?"></textarea>
+                <label for="feedbackRating">Your rating</label>
+                <select id="feedbackRating" name="rating" required>
+                    <option value="">Choose a rating</option>
+                    <option value="5">5 — Excellent</option>
+                    <option value="4">4 — Good</option>
+                    <option value="3">3 — Average</option>
+                    <option value="2">2 — Fair</option>
+                    <option value="1">1 — Poor</option>
+                </select>
+                <button id="saveFeedback" class="add-to-cart" type="submit">Save feedback</button>
+                <p id="feedbackStatus" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <script src="product-photo.js?v=3"></script>
+    <script src="product.js?v=6"></script>
+    <script src="purchase.js?v=1"></script>
+</body>
+</html>

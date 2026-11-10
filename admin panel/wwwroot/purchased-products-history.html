@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bought products · Admin panel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard-navigation.css">
+  <script src="purchased-products-history.js?v=bought-products-5" defer></script>
+</head>
+<body>
+  <header><a href="/" class="brand"><span class="mark">P</span> Product admin</a><nav aria-label="Main navigation"><a href="/">Add product</a><a href="/products.html">Products</a><a href="/feedback.html">Feedback dashboard</a><a href="/purchased-products-history.html" aria-current="page">Bought products</a></nav></header>
+  <main>
+    <div class="intro"><span class="eyebrow">CUSTOMERS / PURCHASES</span><h1>Bought products</h1><p>View bought products.</p></div>
+    <section class="card" style="padding:24px">
+      <div class="actions"><button type="button" id="load-purchases">Reload bought products</button></div>
+      <p id="purchase-status" role="status" aria-live="polite">Loading bought products...</p>
+      <div style="overflow-x:auto">
+        <table id="purchase-table" hidden style="width:100%;text-align:left;border-spacing:16px">
+          <thead><tr><th scope="col">Product ID</th><th scope="col">Product</th><th scope="col">Price</th><th scope="col">Stock quantity</th><th scope="col">Description</th><th scope="col">Sex</th></tr></thead>
+          <tbody id="purchase-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
