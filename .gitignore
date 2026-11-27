@@ -12,3 +12,5 @@
 *.db-wal
 *.user
 **/.build-check/
+__pycache__/
+*.py[cod]
